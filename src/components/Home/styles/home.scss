@@ -1,0 +1,67 @@
+@use '../../../styles/mixins';
+
+.home_container{
+    height: 100vh;
+    background-image: url(../../../assets/home.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.presentation_container{
+    height: 75%;
+
+    @include mixins.flexSetUp(center, space-evenly);
+
+    article{
+        width: 40vw;
+        text-align: center;
+
+        h1{
+            margin-bottom: 30px;
+            font-size: 42px;
+        }
+        
+        p{
+            font-size: 23px;
+        }
+
+    }
+}
+
+
+.person_image_container{
+    background-image: url('../../../assets/face.jpg');
+    background-position: center;
+
+    width: 250px;
+    height: 250px;
+    background-size: cover;
+    border-radius: 300px;
+}
+
+.presentation_footer{
+    margin-right: 4vw;
+    position: absolute;
+    @include mixins.flexSetUp(center, space-evenly);
+    gap: 15px;
+    bottom: 5%;
+
+    img{
+        cursor: pointer;
+    }
+
+}
+
+
+@media (max-width: 600px){
+    .presentation_container{
+        margin-top: 2vh;
+        flex-direction: column;
+        article{
+            margin-top: 3vh;
+            width: 80vw;
+        }
+    }
+}
+
+

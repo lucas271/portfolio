@@ -1,0 +1,102 @@
+@use '../../../styles/variables';
+@use '../../../styles/mixins' as *;
+
+#skills{
+    position: relative;
+    height: 120vh;
+    background-color: variables.$secundary-color;
+}
+
+.carousel_container{
+    position: relative;
+
+    
+    height: inherit;
+    width: 80vw;
+
+    margin: auto;
+    overflow: hidden;
+    text-align: center;
+
+    @include flexSetUp(center, center);
+    flex-wrap: nowrap;
+    gap: 20px;
+
+    h2{
+        margin-top: 20px;
+    }
+    p{  
+        width: 55%;
+        margin: auto;
+        margin-top: 20px;
+        text-align: center;
+    }
+}
+
+
+.selected_carousel_item{
+    transform: scale(1.3);
+    width: 100%;
+    order: 1;
+
+    img{
+        width: 30%;
+    }
+
+
+}
+
+.last_carousel_item{
+    order: 0;
+}
+
+.next_carousel_item{
+    order: 2;
+}
+
+.last_carousel_item, .next_carousel_item{
+    opacity: 50%;
+    transform: scale(0.7);
+
+    p{
+        display: none;
+    }
+    h2{
+        display: none;
+    }
+    img{
+        height: auto;
+        width: 100%;
+    }
+}
+
+.carousel_hidden{
+    display: none;
+}
+
+
+.arrow_left, .arrow_right{
+    position: absolute;
+    cursor: pointer;
+}
+
+.arrow_left{
+    left: 0;
+    top: 50%;
+}
+
+.arrow_right{
+    right: 0;
+    top: 50%;
+}
+
+
+@media (max-width: 700px){
+    .selected_carousel_item{
+        width: 100%;
+    }
+
+    .next_carousel_item, .last_carousel_item{
+        display: none;
+    }
+}

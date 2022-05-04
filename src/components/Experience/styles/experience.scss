@@ -1,0 +1,23 @@
+@use '../../../styles/variables' as *;
+@use '../../../styles/mixins' as *;
+
+
+#experience{
+    height: 100vh;
+    background-color: $primary-color;
+
+    @include flexSetUp(center, center);
+
+
+    img{
+        width: 20vw;
+    }
+
+    article{
+        text-align: center;
+    }
+    h2, p{
+        width: 50%;
+        margin: 20px auto;
+    }
+}

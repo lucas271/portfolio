@@ -1,0 +1,99 @@
+@use './index.scss' as *;
+
+
+.navbar_container{
+    position: relative;
+    height: 60px;
+    width: 100%;
+    background-color: transparent;
+}
+.navbar{
+    z-index: 3;
+    position: fixed;
+    background-color: inherit;
+    height: inherit;
+    width: inherit;
+    
+    @include flexSetUp(center, space-around);
+
+    ul{
+        display: flex;
+        gap: 15px;
+    }
+}
+
+.sticky-navbar{
+    background-color: $primary-color;
+}
+
+@media (max-width: 700px){
+    .navbar{
+        justify-content: space-between;
+
+        .home{
+            margin-left: 15px;
+        }
+        ul{
+            margin-right: 15px;
+        }
+    }
+
+    
+
+    
+    .checkbox{
+        display: none;
+    }
+    
+    .hamburger-lines{
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+        margin-right: 20px;
+        position: relative;
+    }
+    
+    .line, .line_last{
+        display: flex;
+        width: 20px;
+        height: 2px;
+        background-color: $text-color;    
+    }
+
+    @keyframes rotate{
+        0%{
+            transform: translate(0px, -3.5px) rotate(45deg);
+        }
+        100%{
+            transform: 0;
+        }
+    }
+
+    .line_last{
+        animation: 0.2s ease-in-out rotate;
+    }
+    
+    .line1{
+        transform: translate(0px, 3.5px) rotate(-45deg);
+    }
+    
+    .line2{
+        transform: translate(0px, -3.5px) rotate(45deg);
+    }
+    
+    .line3{
+        display:none;
+    }
+    
+    .navbar_hamburguer_items{
+        background-color: white;
+        border-radius: 5px;
+        padding: 5px;
+        position: absolute;
+        top: 3.9vh;
+        right: -9.2vw;
+        flex-direction: column;
+    
+        gap: 2px;
+    }
+}
